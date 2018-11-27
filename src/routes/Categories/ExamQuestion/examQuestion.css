@@ -1,0 +1,28 @@
+.exam-question-container {
+  margin-top: 36px;
+}
+
+.exam-question-card {
+  min-width: 600px;
+  max-width: 600px;
+}
+
+div.exam-question-header div.exam-question-subheader.sub.header {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 4px;
+}
+
+.exam-question-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+div.exam-question-question.header {
+  margin-bottom: 24px;
+}
+
+div.exam-question-question.header .sub.header {
+  margin-top: 10px;
+  text-align: justify;
+}

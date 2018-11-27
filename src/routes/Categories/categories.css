@@ -1,0 +1,14 @@
+.categories {
+  padding: 16px;
+  width: 1000px;
+}
+
+.card-container {
+  margin-top: 50px;
+}
+
+a.card {
+  height: 255px;
+  cursor: pointer;
+  padding: 16px !important;
+}

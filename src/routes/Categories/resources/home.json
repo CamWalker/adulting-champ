@@ -1,0 +1,9 @@
+{
+  "name": "Home",
+  "key": "home",
+  "description": "Interior, Exterior, and Yard Maintainance",
+  "icon": "home",
+  "colorName": "yellow",
+  "color": "#fbbd08",
+  "ready": false
+}

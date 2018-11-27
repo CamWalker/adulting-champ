@@ -1,0 +1,97 @@
+.container {
+  width: 100%;
+  background: rgba(31, 54, 77, 0.1);
+  height: 56px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.content {
+  width: 1000px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 16px;
+}
+
+.content-left {
+  display: flex;
+  align-items: center;
+  width: 250px;
+  margin-top: 16px;
+}
+
+.logo-title {
+  display: flex;
+}
+
+.logo-letter {
+  font-size: 18px;
+}
+
+.logo-icon {
+  margin: 0;
+}
+
+.name {
+  margin-left: 12px;
+  color: #000;
+}
+
+.content-center {
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.content-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  width: 250px;
+}
+
+.content-right a {
+  text-decoration: none;
+}
+
+.nav-item {
+  margin-left: 26px;
+  color: #9cb3c9;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.nav-item:hover {
+  color: #1f364d;
+}
+
+.nav-menu {
+  height: 24px;
+  width: 24px;
+  background: #5f8ab4;
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .content-right {
+    display: none;
+  }
+  /* .nav-menu {
+    display: block;
+  } */
+}
+
+/* @media (max-width: 340px) {
+  .name {
+    display: none;
+  }
+} */
+/* 1000px starts coming together */
+/* 600px converts nav items to hamburger */
+/* 340px name disappears */

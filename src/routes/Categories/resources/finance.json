@@ -1,0 +1,156 @@
+{
+  "name": "Finance",
+  "key": "finance",
+  "description": "Saving, Managing Debt, and Building Wealth",
+  "icon": "money bill alternate outline",
+  "colorName": "green",
+  "color": "#21ba45",
+  "ready": true,
+  "startingScore": 2,
+  "max": 11,
+  "tasks": [
+    {
+      "text": "Follow a monthly budget",
+      "dependency": [
+        { "key": "earnMoreThanSpend" },
+        { "key": "hasBudget" }
+      ]
+    },
+    {
+      "text": "Save $1,000",
+      "dependency": [
+        { "key": "has1000Saved" }
+      ]
+    },
+    {
+      "text": "Save an emergency fund (at least 3 months of expenses)",
+      "dependency": [
+        { "key": "has3MonthsExpenses" }
+      ]
+    },
+    {
+      "text": "Pay off debts",
+      "dependency": [
+        { "key": "hasDebt", "inverted": true }
+      ]
+    },
+    {
+      "text": "Get life insurance",
+      "dependency": [
+        { "key": "hasLifeInsurance", "dependency": "hasDependent" }
+      ]
+    },
+    {
+      "text": "Buy a house",
+      "dependency": [
+        { "key": "ownsHome" }
+      ]
+    },
+    {
+      "text": "Pay off house early",
+      "dependency": [
+        { "dependency": "ownsHome", "key": "hasHousingPayment", "inverted": true }
+      ]
+    },
+    {
+      "text": "Create a retirement account (401k, IRA, Roth IRA, 403b)",
+      "dependency": [
+        { "key": "hasRetirementAccount" }
+      ]
+    },
+    {
+      "text": "Contribute regularly to your retirement account",
+      "dependency": [
+        { "key": "isContributingToRetirement", "dependency": "hasRetirementAccount" }
+      ]
+    },
+    {
+      "text": "Create a college fund for your kids (ESA or 529 savings option)",
+      "dependency": [
+        { "dependecy": "willHelpPayCollege", "key": "hasCollegeFund" }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "text": "Do you earn more than you spend?",
+      "key": "earnMoreThanSpend",
+      "value": 1
+    },
+    {
+      "text": "Do you regularly create a budget?",
+      "key": "hasBudget",
+      "value": 1
+    },
+    {
+      "text": "Do you have $1000 cash in savings?",
+      "key": "has1000Saved",
+      "value": 1,
+      "note": "This can be in the bank, but it needs to be liquid. Meaning, it can't be invested in stocks, real estate, or anything that would make it hard to access."
+    },
+    {
+      "text": "Do you have enough cash savings to cover at least 3 months of expenses?",
+      "key": "has3MonthsExpenses",
+      "value": 1,
+      "dependency": "has1000Saved"
+    },
+    {
+      "text": "Do you have debt excluding a home mortgage?",
+      "key": "hasDebt",
+      "value": -1
+    },
+    {
+      "text": "Are you a homeowner?",
+      "key": "ownsHome",
+      "value": 1
+    },
+    {
+      "text": "Do you have a home mortgage payment?",
+      "key": "hasHousingPayment",
+      "value": -1,
+      "dependency": "ownsHome"
+    },
+    {
+      "text": "Do you have a retirement account?",
+      "note": "IRA, 401k, or 403b for example",
+      "key": "hasRetirementAccount",
+      "value": 1
+    },
+    {
+      "text": "Are you regularly contributing to your retirement account?",
+      "key": "isContributingToRetirement",
+      "value": 1,
+      "dependency": "hasRetirementAccount"
+    },
+    {
+      "text": "Is anyone dependent on your income?",
+      "note": "This is usually a spouse or a child",
+      "key": "hasDependent",
+      "value": 0
+    },
+    {
+      "text": "Do you have any children dependent on your income?",
+      "key": "hasChildDependent",
+      "value": 0,
+      "dependency": "hasDependent"
+    },
+    {
+      "text": "Do you have life insurance?",
+      "key": "hasLifeInsurance",
+      "value": 1,
+      "dependency": "hasDependent"
+    },
+    {
+      "text": "Are you planning to help your children pay for college?",
+      "key": "willHelpPayCollege",
+      "value": 0,
+      "dependency": "hasChildDependent"
+    },
+    {
+      "text": "Do you have a special fund set aside to help your child pay for college?",
+      "key": "hasCollegeFund",
+      "value": 1,
+      "dependency": "willHelpPayCollege"
+    }
+  ]
+}

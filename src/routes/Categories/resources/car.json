@@ -1,0 +1,9 @@
+{
+  "name": "Car",
+  "key": "car",
+  "description": "Keep it Running and Retain Value.",
+  "icon": "car",
+  "colorName": "blue",
+  "color": "#2185d0",
+  "ready": false
+}

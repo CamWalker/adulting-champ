@@ -1,19 +1,36 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Provider } from 'mobx-react';
+
+import Store from './store';
+import Header from './components/Header';
+// import Community from './routes/Community/Community';
+import Categories from './routes/Categories';
+import ExamQuestion from './routes/Categories/ExamQuestion';
+import Main from './routes/Categories/Main'
+// import Checklist from './routes/Checklist';
+// import Learn from './routes/Learn/Learn';
 import './App.css';
+import 'semantic-ui-css/semantic.min.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <Provider store={Store}>
+        <Router>
+          <div className="App">
+            <Header />
+            <div className="main">
+              <Switch>
+                {/* <Route path="/checklist" component={Checklist} exact /> */}
+                <Route path="/:category/evaluation" component={ExamQuestion}/>
+                <Route path="/:category" component={Main}/>
+                <Route component={Categories} />
+              </Switch>
+            </div>
+          </div>
+        </ Router>
+      </Provider>
     );
   }
 }
